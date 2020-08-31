@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <link href='taxi.css' rel='stylesheet'>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+      <title>Taxi Fare Estimator</title>
+  </head>
+  <body>
+    <header></header>
+    <div class="outermost-container">
+      <div class="info-container">
+        <div class="info-header">
+          <h1>Fare Calculator</h1>
+          <div class="calculator"></div>
+        </div>
+        <div class="info">
+          <p>For a fare estimate, enter the distance to be
+             covered and the wait time due to heavy traffic or 
+             traffic lights etc.</p>
+          <p>Night tariff applies for Bank Holidays.</p>
+          <p>*<em>Minimum fare is £4 for any type of ride</em>.</p>
+        </div>
+      </div>
+      <div class="form-container standard">
+        <p class="fare-value">Estimated fare is: <br><span id="fare">£0.0</span></p>
+        <p class="reset-btn">RESET</p>
+        <form action="" method="">
+          <div>
+            <div class="input-area">
+              <label for="distance">Distance in <strong>km</strong>:</label>
+              <input required id="distance" type="text" placeholder="0">  
+            </div>
+            <div class="input-area">
+              <label for="time">Wait time in traffic in <strong>minutes</strong>:</label>
+              <input required id="time" type="text" placeholder="0">
+            </div>
+          </div>
+          <div>
+            <div class="radio">
+              <p><strong>Day tariff:</strong> From 07:00 to 24:00<strong> 
+                Night tariff:</strong> From 00:00 to 07:00</p>
+              <label for="day">Day</label>
+              <input id="day" type="radio" value="0" name="day-night" checked>
+              <label for="night">Night</label>
+              <input id="night" type="radio" value="1" name="day-night">
+            </div>
+            <div class="radio">
+              <p>Number of passengers</p>
+              <label for="one-to-four">1-4</label>
+              <input id="one-to-four" type="radio" value="0" name="pass-number" checked>
+              <label for="five-to-eight">5-8</label>
+              <input id="five-to-eight" type="radio" value="1" name="pass-number" >
+            </div>
+          </div>  
+        </form>
+      </div>
+    </div>
+    <div class="ride-type-container">
+      <div class="standard btn">
+        Standard
+      </div>
+      <div class="luxury btn">
+        Luxury
+      </div>
+    </div>
+    <script src="taxi.js"></script>
+  </body>                 
+</html>

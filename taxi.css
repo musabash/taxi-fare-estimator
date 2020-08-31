@@ -1,0 +1,208 @@
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    margin: 0.5em;
+}
+
+p {
+  letter-spacing: 0.05rem;
+}
+
+em {
+  font-size: 0.7rem;
+}
+.outermost-container {
+    background-image: url(pics/london-map.jpg);
+    background-size: cover;
+    background-color: rgba(143, 129, 129, 0.5);
+    padding-top: 0.85em;  
+}
+
+.outermost-container,
+.ride-type-container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.info-container {
+    background-color: hsla(255, 100%, 100%, 0.6);
+    margin: 0.1em auto;
+    padding-top: 0.8em;
+    backdrop-filter: blur(2px);
+    width: 90%;
+}
+.info-header h1 {
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+    margin: 0;
+}
+.info-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info {
+    padding: 0.3em 1.1em;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.info p {
+  margin: 0.4em;
+}
+
+.calculator {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 22px;
+    border: 2px solid;
+    border-radius: 2px
+   }
+   
+.calculator::after,
+.calculator::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    top: 2px;
+    left: 2px
+   }
+   
+.calculator::after {
+    width: 2px;
+    box-shadow:
+    4px 0 0, 8px 0 0, 0 4px 0, 4px 4px 0,
+    8px 4px 0, 0 8px 0, 4px 8px 0, 8px 8px 0,
+    8px 6px 0;
+    top: 6px
+   }
+
+.fare-value {
+  padding: 0.8em 0.8em 0 0.8em;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.fare-value span {
+  color: red;
+  font-weight: 700;
+  font-size: 2rem;
+}
+form {
+  display: flex;
+  padding-bottom: 0;
+}
+
+.input-area {
+  display: flex;
+  flex-flow: row;
+  justify-content: stretch;
+  align-items: center;
+  margin-top: 1.2em;
+  margin-bottom: 2.4em;
+}
+.input-area label {
+  width:65%;
+  font-size: 0.8rem;
+  margin-left: 0.9em;
+  text-align: right;
+  padding-right: 0.4em;
+}
+
+label {
+  letter-spacing: 0.05rem;
+}
+#time,
+#distance {
+  width: 20%;
+  font-size: 1.2rem;
+  text-align: right;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.radio {
+  display: inline-block;
+  margin-top: 0.3em;
+  margin-bottom: 0.28em;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 97%;
+}
+.radio p {
+  font-size: 0.69rem;
+  padding: 0.45em;
+  margin: 0.45em;
+  background-color: hsla(50, 95%, 90%, 0.4);
+  border-radius: 0.6em;
+}
+.radio input {
+  width: 1.2em;
+  height: 1.2em;
+}
+.ride-type-container {
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+}
+.btn {
+  padding: 0.6em;
+  width:50%;
+  text-align: center;
+  font-weight: 400;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  letter-spacing: .15rem;
+}
+.btn:hover,
+.btn:focus,
+.reset-btn:hover,
+.reset-btn:focus {
+  color: rgb(243, 243, 243);
+  cursor: pointer;
+  font-weight: 900;
+}
+.reset-btn {
+  margin: 0;
+  text-align: center;
+}
+.standard {
+  background-color: hsla(150, 5%, 73%, 0.99);
+}
+.luxury {
+  background-color: hsla(212, 45%, 70%, 0.99);
+}
+
+@media (min-width: 800px) {
+  .outermost-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 800px;
+      padding-top: 0;
+  }
+  .ride-type-container {
+    position: relative;
+    left: 12.5em;
+  }
+  .form-container {
+    width: 400px;
+  }
+  .info-container {
+    width: 370px;
+    margin-bottom: 0.8em;
+    margin-top: 0.8em;
+  }
+}
