@@ -16,14 +16,21 @@ let k = 0; //k standart or lux
 const btns = document.querySelector('.ride-type-container');
 const form = document.querySelector('form');
 const resetBtn = document.querySelector('.reset-btn');
+const distanceInput = document.getElementById('distance');
+const timeInput = document.getElementById('time');
+const fareOutput = document.getElementById('fare');
+const invalidChars = ["-", "+", "e"];
+      
 btns.addEventListener('click', colorChange);
 form.addEventListener('change', fareCalculator);
 resetBtn.addEventListener('click', reset);
+distanceInput.addEventListener("keydown", checkInvalidChars);
+timeInput.addEventListener("keydown", checkInvalidChars);
 
 function reset() {
-  document.getElementById('distance').value = "";
-  document.getElementById('time').value = "";
-  document.getElementById('fare').textContent = '£0.0';
+  distanceInput.value = "";
+  timeInput.value = "";
+  fareOutput.textContent = '£0.0';
 }
 
 function colorChange(event){
@@ -33,29 +40,30 @@ function colorChange(event){
   fareCalculator();
 }
 
+function checkInvalidChars(e) {
+  if (invalidChars.includes(e.key)) {
+    e.preventDefault();
+  }
+}
+
 function fareCalculator () {
-  let distance = document.getElementById('distance').value;
-  let time = document.getElementById('time').value;
-  if (isNaN(distance) || isNaN(time)) {
-    window.alert("Distance and Time values must be number");
-    reset();
-  } else {
-    let dayNight = document.getElementsByName('day-night')  
-    for (let rd of dayNight) {
-      rd.checked ? i = rd.value : i;
-    }
-    let passNumber = document.getElementsByName('pass-number')  
-    for (let rd of passNumber) {
-      rd.checked ? j = rd.value : j;
-    }
-    let arr = tariffData[i][j][k];
-    fare = arr[0] + distance*arr[2] + time*arr[1];
-    console.log(fare);
-    if (fare < 4) {
-      fare = 4;
-    }
-    document.getElementById('fare').textContent = '£' + fare.toFixed(2);
-  };
+  let distance = distanceInput.value;
+  let time = timeInput.value;
+  let dayNight = document.getElementsByName('day-night')  
+  for (let rd of dayNight) {
+    rd.checked ? i = rd.value : i;
+  }
+  let passNumber = document.getElementsByName('pass-number')  
+  for (let rd of passNumber) {
+    rd.checked ? j = rd.value : j;
+  }
+  let arr = tariffData[i][j][k];
+  fare = arr[0] + distance*arr[2] + time*arr[1];
+  console.log(fare);
+  if (fare < 4) {
+    fare = 4;
+  }
+  fareOutput.textContent = '£' + fare.toFixed(2);
 }
 
 
