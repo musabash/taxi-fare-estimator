@@ -184,7 +184,7 @@ label {
   background-color: hsla(212, 45%, 70%, 0.99);
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   .outermost-container {
       display: flex;
       flex-direction: row;
